@@ -1,7 +1,7 @@
 package com.shenhuniurou.scrollruler;
 
 import android.view.View;
-
+import android.graphics.Color;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
@@ -66,9 +66,29 @@ public class RNScrollRulerManager extends SimpleViewManager {
         ruler.setUnit(unit);
     }
 
+    @ReactProp(name = "unitColor", customType = "Color")
+    public void setUnitColor(RNScrollRuler ruler, @Nullable Integer unitColor) {
+        ruler.setUnitColor(unitColor);
+    }
+
+    @ReactProp(name = "resultColor", customType = "Color")
+    public void setResultNumColor(RNScrollRuler ruler, @Nullable Integer resultColor) {
+        ruler.setResultNumColor(resultColor);
+    }
+
+    @ReactProp(name = "backgroundColor", customType = "Color")
+    public void setBgColor(RNScrollRuler ruler, @Nullable Integer backgroundColor) {
+        ruler.setBgColor(backgroundColor);
+    }
+
+    @ReactProp(name = "resultGap")
+    public void setRulerToResultgap(RNScrollRuler ruler, @Nullable Integer resultGap) {
+        ruler.setRulerToResultgap(resultGap);
+    }
+
     @ReactProp(name = "step")
     public void setStep(RNScrollRuler ruler, @Nullable float step) {
-        ruler.setScaleLimit((int)(step * 10));
+        ruler.setScaleLimit((int) (step * 10));
     }
 
     @ReactProp(name = "num")
